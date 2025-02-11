@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<div class="article-container">
+    <h1 class="title-text">{{ post.title }}</h1>
+
+    <p><small>Publicado {{ post.date.strftime('%Y-%m-%d %H:%M') }}</small></p>
+    
+
+    {% if post.image_filename %}
+    <img src="{{ url_for('static', filename='images/' + post.image_filename) }}" class="img-fluid" alt="Imagen del post">
+    {% endif %}
+
+    <p class="article-text">{{ post.content|safe }}</p>
+    <p class="author-text">Autor: Manuel Rodríguez</p>
+
+    {% if current_user.is_authenticated and current_user.id == post.admin_id %}
+    <a href="{{ url_for('views.edit', id=post.id) }}">Editar</a>
+    {% endif %}
+
+    <a href="{{ url_for('views.home') }}">← Volver a inicio</a>
+</div>
+<br>
+</br>
+{% endblock %}

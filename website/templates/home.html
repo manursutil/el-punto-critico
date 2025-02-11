@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% block title %}El Punto Crítico{% endblock %} {%
+block content %}
+<div class="container mt-4">
+  <h1 class="text-center mt-4">
+    Bienvenidos a <em class="header-name">El Punto Crítico</em>, un lugar donde
+    escribo sobre <em>personas</em>, <em>cultura</em> y <em>política</em>.
+  </h1>
+  <hr class="main-divide" />
+</div>
+
+<div class="container mt-4">
+  {% for post in posts %}
+  <div class="row align-items-center border-bottom pb-4 mb-4">
+    {% if post.image_filename %}
+    <div class="col-md-4">
+      <img
+        src="{{ url_for('static', filename='images/' + post.image_filename) }}"
+        class="img-fluid mb-2"
+        alt="Imagen del post"
+      />
+    </div>
+    {% endif %}
+
+    <div class="col-md-8">
+      <h3 class="fw-bold">{{ post.title }}</h3>
+      <p>{{ post.content[:300]|safe }}...</p>
+
+      <a
+        href="{{ url_for('views.article', id=post.id) }}"
+        class="btn btn-outline-dark"
+        >Leer más</a
+      >
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

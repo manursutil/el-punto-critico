@@ -1,0 +1,140 @@
+/* General page style */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.container-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+body {
+  background-color: #fcf8f2;
+}
+
+/* Heading and nav bar */
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Georgia", Times, serif;
+}
+
+.header-name {
+  font-family: "Tangerine", serif;
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.tangerine-regular {
+  font-family: "Tangerine", serif;
+  font-size: 4rem;
+  font-weight: bold;
+  font-style: normal;
+  color: #2d6a4f;
+}
+
+.nav-link {
+  color: #000000;
+  font-family: "Georgia", Times, serif;
+}
+
+.btn-success {
+  background-color: #2d6a4f;
+  border-color: #2d6a4f;
+}
+
+.page-title {
+  font-family: "Georgia", Times, serif;
+  font-weight: bold;
+  color: #2d6a4f;
+}
+
+/* Post layout */
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.col-md-4 img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Homepage posts styles */
+.fw-bold {
+  font-size: 1.5rem;
+  font-family: "Georgia", Times, serif;
+}
+
+p {
+  color: #555;
+  line-height: 1.6;
+  font-family: "Georgia", Times, serif;
+}
+
+/* Spacing */
+.border-bottom {
+  border-bottom: 1px solid #797979;
+}
+
+.main-divide {
+  color: #797979;
+  height: 2px;
+}
+
+.btn-outline-dark {
+  border-radius: 20px;
+  padding: 8px 16px;
+}
+
+.btn-outline-dark:hover {
+  background-color: #2d6a4f;
+  color: #fff;
+}
+
+/* Article page */
+.article-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.title-text {
+  align-items: center;
+}
+
+.article-text {
+  align-items: center;
+  text-align: justify;
+  width: 70%;
+}
+
+.author-text {
+  align-items: left;
+  text-align: justify;
+  width: 100%;
+  font-weight: bold;
+}
+
+/* Edit page */
+.edit-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 900px;
+  margin: 0 auto;
+}
