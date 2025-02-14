@@ -12,13 +12,13 @@
 </head>
 <body>
     <div class="header">
-        <a href="{{ url_for('views.home') }}"><h1>El Punto Crítico</h1></a>
+        <a class="header-title" href="{{ url_for('views.home') }}">El Punto Crítico</a>
         <nav>
             {% if current_user.is_authenticated %}
-            <a href="{{ url_for('auth.logout') }}">Logout</a>
-            <a href="{{ url_for('views.add') }}">Añadir</a>
+            <a href="{{ url_for('auth.logout') }}" class="nav-button">Logout</a>
+            <a href="{{ url_for('views.add') }}" class="nav-button">Añadir</a>
             {% else %}
-            <a href="{{ url_for('auth.login') }}">Login</a>
+            <a href="{{ url_for('auth.login') }}" class="nav-button">Login</a>
             {% endif %}
         </nav>
     </div>

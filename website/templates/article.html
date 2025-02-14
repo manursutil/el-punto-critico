@@ -1,15 +1,29 @@
 {% extends "base.html" %} {% block title %}{{ post.title }}{% endblock %} {%
 block content %}
 
+<!--
 <div class="article-container">
     <a href="{{ url_for('views.home') }}">&#8592;</a>
     <h1>{{ post.title }}</h1>
 </div>
+-->
+
+<div class="article-header" style="background-image: url('{{ url_for('static', filename='images/' + post.image_filename) }}');">
+    <div class="overlay">
+        <h1>{{ post.title }}</h1>
+    </div>
+</div>
+
 <div class="container">
     <div class="meta">Publicado {{ post.date.strftime('%Y-%m-%d %H:%M') }}</div>
     <br>
     <div class="article-content py-3">{{ post.content|safe }}</div>
     <p class="author-text"><b>Escrito por: Manuel Rodríguez</b></p>
+    <div class="edit-button">
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('views.edit', id=post.id) }}" class="article-edit">Editar</a>
+        {% endif %}
+    </div>
 </div>
 
 <!--

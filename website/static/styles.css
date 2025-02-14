@@ -4,11 +4,13 @@
   --background-light: #fff8f1;
   --background-dark: #1e1e1e;
   --text-light: #333;
-  --text-dark: #f5f5f5;
+  --text-dark: #ffffff;
   --meta-light: #888;
-  --meta-dark: #bbb;
+  --meta-dark: #ffffff;
   --link-light: #333;
-  --link-dark: #ddd;
+  --link-dark: #ffffff;
+  --card-light: white;
+  --card-dark: #242424;
 }
 
 body {
@@ -44,12 +46,50 @@ body {
   .header nav a {
     color: var(--link-dark) !important;
   }
+  .story {
+    background: var(--card-dark) !important;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+  }
 }
 
 .container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 40px auto;
   padding: 0 20px;
+}
+
+.story {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: var(--card-light);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  height: auto;
+  max-width: 100%;
+}
+
+.story-image {
+  flex: 0 0 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.story-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: calc(100% - 170px);
 }
 
 .header {
@@ -64,6 +104,12 @@ body {
   margin: 0;
 }
 
+.header-title {
+  font-weight: bold;
+  font-size: 30px;
+  color: #8b0000;
+}
+
 .header nav {
   display: flex;
   gap: 15px;
@@ -73,6 +119,10 @@ body {
   text-decoration: none;
   color: var(--text-light);
   font-size: 16px;
+}
+
+.nav-button:hover {
+  color: #8b0000;
 }
 
 .date {
@@ -90,7 +140,8 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #8b0000;
+  text-decoration: none;
 }
 
 h1 {
@@ -132,5 +183,33 @@ h1 {
 
 .article-content {
   font-family: "EB Garamond", serif;
+  font-size: 20px;
+}
+
+.article-header {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.article-header .overlay {
+  padding: 20px;
+  width: 100%;
+  color: white;
+}
+
+.article-header h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.edit-button {
+  text-align: center;
   font-size: 20px;
 }
